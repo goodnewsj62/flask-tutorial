@@ -1,0 +1,90 @@
+.contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inner {
+    width: 85%;
+    margin-top: 1rem;
+}
+
+.post-info {
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 10px;
+}
+
+.post-info h1 {
+    text-align: center;
+}
+
+.post-info h1::first-letter {
+    text-transform: capitalize;
+}
+
+.post-info .span {
+    display: block;
+    font-weight: bold;
+    color: gray;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
+
+.post-info .span1 {
+    display: block;
+    font-weight: bold;
+    color: gray;
+    margin-top: 1rem;
+    padding: 10px 0;
+    border-top: 1px solid grey;
+}
+
+.span span {
+    font-weight: initial;
+}
+
+.inner p {
+    margin-bottom: 1rem;
+}
+
+.inner p::first-letter {
+    text-transform: capitalize;
+}
+
+.action {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.update,
+.delete {
+    display: inline-block;
+}
+
+.update a {
+    text-decoration: none;
+    background-color: #1e901e;
+    padding: 6px 10px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.delete a {
+    text-decoration: none;
+    background-color: #ff1e10;
+    color: #fff;
+    padding: 6px 10px;
+    margin-left: 1rem;
+    border-radius: 3px;
+}
+
+.delete a:hover {
+    background-color: #d60f01;
+}
+
+.update a:hover {
+    background-color: #1a681a;
+}

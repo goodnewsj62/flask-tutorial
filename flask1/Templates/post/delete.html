@@ -1,0 +1,56 @@
+{% extends 'base.html'%} {% block title%}
+<title> Delete page</title>{% endblock %} {% block style %}
+<style>
+    .contain {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .contain div {
+        margin-top: 5rem;
+        border: 1px solid grey;
+        width: 90%;
+        height: 10vh;
+        padding: 2px 5px;
+        margin-bottom: 1rem;
+    }
+    
+    div p {
+        text-align: center;
+    }
+    
+    .btn {
+        outline: none;
+        box-shadow: none;
+        border: 1px solid #ff1e10;
+        padding: 8px 20px;
+        color: white;
+        border-radius: 5px;
+        background-color: #ff1e10;
+    }
+    
+    .btn:hover {
+        background-color: #d60f01;
+    }
+    
+    @media screen and (min-width: 900px) {
+        div h2 {
+            text-align: center;
+        }
+    }
+</style> {% endblock %} {% block content%}
+<div class="contain">
+    <div>
+        <h2>Do you really want to delete this post?</h2>
+        <p>This change is irreversable</p>
+    </div>
+    <form action="" method="POST">
+        <button class="btn">
+            Delete
+        </button>
+    </form>
+</div>
+
+{% endblock %}

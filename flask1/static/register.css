@@ -1,0 +1,85 @@
+.contain {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    height: 70%;
+    width: 75%;
+}
+
+fieldset {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    /* border: 1.5px solid rgba(0, 0, 0, 0.2); */
+}
+
+.user-div {
+    height: 20%;
+    width: 100%;
+}
+
+.error {
+    border: 1.5px solid rgba(225, 0, 0, 0.9);
+}
+
+.errors span {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.field-label {
+    display: block;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.field {
+    display: block;
+    width: 90%;
+    height: 42%;
+    margin-left: 5px;
+}
+
+.submit {
+    display: block;
+    text-align: center;
+}
+
+.button {
+    color: #fff;
+    background-color: #1e90ff;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #1e90ff;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #15416d;
+}
+
+@media screen and (min-width: 1000px) {
+    form {
+        height: 90%;
+        width: 20%;
+    }
+    .contain {
+        height: 90vh;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    form {
+        height: 80%;
+        width: 30%;
+    }
+    .contain {
+        height: 90vh;
+    }
+}

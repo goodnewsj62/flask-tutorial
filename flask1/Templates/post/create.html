@@ -1,0 +1,31 @@
+{% extends 'base.html'%} {% block title%}
+<title> Create page</title>{% endblock %} {% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'create.css')}}"> {% endblock %} {% block content%}
+<div class="contain">
+    <form action="" method="POST">
+        <fieldset>
+            {{form.hidden_tag()}}
+            <legend> Create</legend>
+            <div class="user-div">
+                {{form.title.label(class = "field-label")}} {% if form.title.errors %} {{form.title(class="field error")}}
+                <div class="errors">
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span> {% endfor %}
+                </div>
+                {% else %} {{form.title(class="field")}} {% endif %}
+            </div>
+            <div class="user-div">
+                {{form.content.label(class = "field-label content")}} {% if form.content.errors %} {{form.content(class="field error content")}}
+                <div class="errors">
+                    {% for error in form.content.errors %}
+                    <span>{{ error }}</span> {% endfor %}
+                </div>
+                {% else %} {{form.content(class="field content")}} {% endif %}
+            </div>
+            <div class="submit">
+                {{form.submit( class = "button")}}
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

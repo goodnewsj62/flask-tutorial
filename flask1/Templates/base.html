@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title> Flask app</title>{% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}"> {% block style %}{% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="head-wrapper">
+                <h1>Flask</h1>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    {% if g.user %}
+                    <li style="color:aliceblue;">{{g.user['username']}}</li>
+                    <li>
+                        <a href="{{url_for('blog.create_page')}}">Create</a></li>
+                    <li><a href="{{url_for('auth.logout')}}">LogOut</a></li>
+                    {% else %}
+                    <li><a href="{{url_for('auth.register')}}"> Register</a></li>
+                    <li><a href="{{url_for('auth.login')}}">Login</a></li>
+                </ul>
+                {% endif %}
+            </nav>
+        </header>
+        <div class="tag">
+            <a href="{{url_for('blog.home_page')}}">
+                    Home
+                </a>
+        </div>
+        {% with messages = get_flashed_messages()%} {% if messages%}
+        <div class="message">
+            {%for message in messages%}
+            <p>{{message}}</p>
+            {% endfor %}
+        </div>
+        {% endif %} {% endwith %} {% block content %} {% endblock %}
+    </div>
+
+</body>
+
+</html>

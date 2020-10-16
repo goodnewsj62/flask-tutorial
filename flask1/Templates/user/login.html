@@ -1,0 +1,41 @@
+{% extends 'base.html'%} {% block title%}
+<title> login page</title>{% endblock %} {% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}"> {% endblock %} {% block content%}
+<div class="contain">
+    <form action="" method="POST">
+        {{ form.hidden_tag()}}
+        <fieldset>
+            <legend>Login</legend>
+            <div class="cover">
+                <div class="user-div">
+                    {{form.username.label(class = "field-label")}} {% if form.username.errors %} {{form.username(class = "field error")}}
+                    <div class="errors">
+                        {% for error in form.username.errors %}
+                        <span>{{error}}</span> {% endfor %}
+                    </div>
+                    {% else %} {{form.username(class = "field")}} {% endif %}
+                </div>
+                <div class="user-div ">
+                    {{form.password.label(class = "field-label ")}} {% if form.password.errors%} {{form.password(class = "field error ")}}
+                    <div class="errors">
+                        {% for error in form.password.errors %}
+                        <span>{{error}}</span> {% endfor %}
+                    </div>
+                    {% else %} {{form.password(class = "field")}} {% endif %}
+
+                </div>
+                <div class="rem">
+                    {{form.remember.label( class = "remember-label")}} {{form.remember( class ="remember")}}
+                </div>
+                <div class="submit">
+                    {{form.submit( class = "button")}}
+                </div>
+                <div class="redirect">
+                    <span>dont have an account? <a href="{{url_for('auth.register')}}"> register</a></span>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
