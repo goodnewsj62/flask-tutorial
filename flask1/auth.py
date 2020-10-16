@@ -59,7 +59,7 @@ def login():
 
     if form.validate_on_submit():
         user = User.query.filter_by(username = form.username.data).first()
-        print(user.password)
+
         if user and bcrypt_.check_password_hash(user.password, form.password.data):
             session['user_id'] = user.id
             login_user(user,remember= form.remember.data)
